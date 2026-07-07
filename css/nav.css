@@ -1,0 +1,133 @@
+/* Nav component — matches Figma node 912:5434 */
+
+:root {
+  --color-bg: #ffffff;
+  --color-brand-bg: #000000;
+  --color-text-default: #000000;
+  --color-text-invert: #ffffff;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  padding: 16px clamp(20px, 8vw, 138px);
+  background-color: var(--color-bg);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  box-sizing: border-box;
+}
+
+.nav__left {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  min-width: 0;
+}
+
+.nav__logo {
+  display: inline-flex;
+  align-items: baseline;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--color-text-default);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.nav__logo span {
+  font-weight: 400;
+}
+
+.nav__menu {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__menu a {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.32px;
+  color: var(--color-text-default);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.nav__menu a:hover,
+.nav__menu a:focus-visible {
+  opacity: 0.6;
+}
+
+.nav__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 20px;
+  background-color: var(--color-brand-bg);
+  border-radius: 12px;
+  color: var(--color-text-invert);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.32px;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease;
+}
+
+.nav__cta:hover,
+.nav__cta:focus-visible {
+  opacity: 0.85;
+}
+
+.nav__toggle {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .nav {
+    flex-wrap: wrap;
+    padding: 16px 20px;
+  }
+
+  .nav__left {
+    gap: 32px;
+    flex-wrap: wrap;
+    row-gap: 12px;
+  }
+
+  .nav__menu {
+    gap: 20px;
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+}
+
+@media (max-width: 560px) {
+  .nav {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .nav__left {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .nav__menu {
+    justify-content: center;
+  }
+}
